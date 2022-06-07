@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+    <style>
+        h2{
+            background:blue;
+            color:#fff;
+            padding:20px;
+            font-size:35px;
+            font-weight:600;
+        }
+        h4{
+            background:#252525;
+            color:#fff;
+            padding:20px;
+            font-size:25px;
+            font-weight:600;
+        }
+        p{
+            background:#ababab;
+            color:#fff;
+            padding:20px;
+            font-size:25px;
+            font-weight:600;
+        }
+    </style>
+    </head>
+    <body>
+        <h2>Hi all - html file render success</h2>
+        <h4>{{data}}</h4>
+
+        <p>{{clist}}</p>
+        <hr/>
+        {% for n in clist  %}
+        <div>{{forloop.counter}} {{n}}</div>
+        {% endfor %}
+        <br/>
+        <hr/>
+        <table border="1" cellpadding=10"">
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+            </tr>
+            {%for d in student_details %}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.phone}}</td>
+            </tr>
+            {% endfor %}
+        </table
+
+        <br/>
+        <hr/>
+        
+        {% if numbers|length > 12  %}
+
+            {% for n in numbers %}
+
+            {% comment %} if else {% endcomment %}
+
+                {% if n < 20 %}
+
+                <div>
+                    {{n}}
+                </div>
+                {% endif %}
+            {% endfor %}
+
+        {% else %}
+            no data found
+        {% endif %}
+
+    </body>
+
+</html>
