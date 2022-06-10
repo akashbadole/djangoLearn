@@ -25,4 +25,5 @@ urlpatterns = [
     # path('blog/<str:courseid>', view.blog), #string
     # path('blog/<slug:courseid>', view.blog), #slug
     path('blog/<courseid>', view.blog), #slug #dynamic route
+    path('about.html', view.aboutus), #ABOUT US
 ]

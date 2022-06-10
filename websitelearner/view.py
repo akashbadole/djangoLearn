@@ -16,6 +16,11 @@ def index(request):
     # return render(request, 'index.html', data)
     return render(request, 'index.html')
 
+# about us integrating
+
+def aboutus(request):
+    return render(request, 'about.html')
+
 def blog(request, courseid):
     return HttpResponse(courseid)
 
