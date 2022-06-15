@@ -26,3 +26,28 @@ def blog(request, courseid):
 
 def homepage(request):
     return HttpResponse("hi, I love django lang")
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def feature(request):
+    return render(request, 'feature.html')
+    
+def project(request):
+    return render(request, 'project.html')
+    
+def quote(request):
+    return render(request, 'quote.html')
+    
+
+def service(request):
+    return render(request, 'service.html')
+    
+def team(request):
+    return render(request, 'team.html')
+    
+def testimonial(request):
+    return render(request, 'testimonial.html')
+
+def fourzerofour(request):
+    return render(request, '404.html')

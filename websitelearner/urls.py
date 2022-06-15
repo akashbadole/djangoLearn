@@ -26,4 +26,15 @@ urlpatterns = [
     # path('blog/<slug:courseid>', view.blog), #slug
     path('blog/<courseid>', view.blog), #slug #dynamic route
     path('about.html', view.aboutus), #ABOUT US
+    path('index.html', view.index), #ABOUT US
+
+    path('contact.html', view.contact), #contact
+    path('feature.html', view.feature), #feature
+    path('project.html', view.project), #project
+    path('quote.html', view.quote), #quote
+    path('service.html', view.service), #service
+    path('team.html', view.team), #team
+    path('testimonial.html', view.testimonial), #testimonial
+    path('404.html', view.fourzerofour), #fourzerofour
+
 ]
