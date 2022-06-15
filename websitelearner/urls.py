@@ -19,22 +19,22 @@ from . import view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', view.index),
+    path('', view.index, name='home'),
     path('homepage/', view.homepage),
     # path('blog/<int:courseid>', view.blog), #int
     # path('blog/<str:courseid>', view.blog), #string
     # path('blog/<slug:courseid>', view.blog), #slug
     path('blog/<courseid>', view.blog), #slug #dynamic route
-    path('about', view.aboutus), #ABOUT US
-    path('index', view.index), #ABOUT US
+    path('about', view.aboutus, name='about'), #ABOUT US
+    # path('index', view.index), #ABOUT US
 
-    path('contact', view.contact), #contact
-    path('feature', view.feature), #feature
-    path('project', view.project), #project
-    path('quote', view.quote), #quote
-    path('service', view.service), #service
-    path('team', view.team), #team
-    path('testimonial', view.testimonial), #testimonial
-    path('404', view.fourzerofour), #fourzerofour
+    path('contact', view.contact, name='contact'), #contact
+    path('feature', view.feature, name='feature'), #feature
+    path('project', view.project, name='project'), #project
+    path('quote', view.quote, name='quote'), #quote
+    path('service', view.service, name='service'), #service
+    path('team', view.team, name='team'), #team
+    path('testimonial', view.testimonial, name='testimonial'), #testimonial
+    path('404', view.fourzerofour, name='fourzerofour'), #fourzerofour
 
 ]
