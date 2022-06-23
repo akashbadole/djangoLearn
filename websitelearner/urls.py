@@ -36,5 +36,6 @@ urlpatterns = [
     path('team', view.team, name='team'), #team
     path('testimonial', view.testimonial, name='testimonial'), #testimonial
     path('404', view.fourzerofour, name='fourzerofour'), #fourzerofour
+    path('userform', view.userform, name='userform'), #userform
 
 ]

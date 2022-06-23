@@ -51,3 +51,16 @@ def testimonial(request):
 
 def fourzerofour(request):
     return render(request, '404.html')
+
+def userform(request):
+    finalans=0
+    try:
+        # n1=int(request.GET['num1'])
+        # n2=int(request.GET['num2'])
+        n1=int(request.GET.get('num1'))
+        n2=int(request.GET.get('num2'))
+        print(n1+n2)
+        finalans=n1+n2
+    except:
+        pass
+    return render(request, 'userform.html', {'output':finalans})
