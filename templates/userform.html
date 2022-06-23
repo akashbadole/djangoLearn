@@ -10,17 +10,18 @@
                         <div class="p-lg-5 ps-lg-0">
                             <h6 class="text-primary">User form</h6>
                             <h1 class="mb-4">Feel Free To User form</h1>
-                            <form>
+                            <form method='POST'>
+                                {% csrf_token %}
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" name="num1" id="num1" placeholder="Your Num 1">
+                                            <input type="text" class="form-control" name="num1" value='{{n1}}' id="num1" placeholder="Your Num 1">
                                             <label for="name">Your No 1</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" name="num2" id="num2" placeholder="Your Num 2">
+                                            <input type="text" class="form-control" name="num2" value='{{n2}}' id="num2" placeholder="Your Num 2">
                                             <label for="email">Your No 2</label>
                                         </div>
                                     </div>
