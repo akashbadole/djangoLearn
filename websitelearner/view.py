@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 def index(request):
@@ -68,6 +68,16 @@ def userform(request):
                 'n2':n2,
                 'output':finalans
             }
+
+            url='/thank-you/?output={}'.format(finalans)
+
+            return redirect(url)
     except:
         pass
     return render(request, 'userform.html',  data)
+    
+def thankyou(request):
+    if request.method=='GET':
+        output=request.GET.get('output')
+
+    return render(request, 'thank-you.html',{'output':output} )
