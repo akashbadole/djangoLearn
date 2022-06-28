@@ -13,7 +13,9 @@
                             <form method='POST'>
                                 {% csrf_token %}
                                 <div class="row g-3">
-                                    <div class="col-md-6">
+
+                                    {{form}}
+                                    {% comment %} <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" name="num1" value='{{n1}}' id="num1" placeholder="Your Num 1" required>
                                             <label for="name">Your No 1</label>
@@ -24,7 +26,7 @@
                                             <input type="text" class="form-control" name="num2" value='{{n2}}' id="num2" placeholder="Your Num 2" required>
                                             <label for="email">Your No 2</label>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                                    
                                     <div class="col-12">
                                         <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>

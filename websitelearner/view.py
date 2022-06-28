@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .forms  import usersform
+
 
 def index(request):
     # data={
@@ -54,7 +56,8 @@ def fourzerofour(request):
 
 def userform(request):
     finalans=0
-    data={}
+    fn=usersform()
+    data={'form':fn}
     try:
         if request.method == 'POST':
         # n1=int(request.GET['num1'])
@@ -64,8 +67,7 @@ def userform(request):
             print(n1+n2)
             finalans=n1+n2
             data={
-                'n1':n1,
-                'n2':n2,
+                'form':fn,
                 'output':finalans
             }
 
