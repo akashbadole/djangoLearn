@@ -26,8 +26,8 @@ def aboutus(request):
 def blog(request, courseid):
     return HttpResponse(courseid)
 
-def homepage(request):
-    return HttpResponse("hi, I love django lang")
+# def homepage(request):
+#     return HttpResponse("hi, I love django lang")
 
 def contact(request):
     return render(request, 'contact.html')
@@ -83,3 +83,29 @@ def thankyou(request):
         output=request.GET.get('output')
 
     return render(request, 'thank-you.html',{'output':output} )
+
+def calculator(request):
+    c=''
+    data={}
+    try:
+        if request.method=="POST":
+            n1=eval(request.POST.get('num1'))
+            opr=request.POST.get('opr')
+            n2=eval(request.POST.get('num2'))
+            if opr == '+':
+                c=n1+n2
+            elif opr == '-':
+                c=n1-n2
+            elif opr == '*':
+                c=n1*n2
+            elif opr == '/':
+                c = n1/n2
+            data={
+                'c':c,
+            }
+
+    except:
+        # print(e)/
+        c = 'Invalid OPR.......'
+    print(c)
+    return render(request, 'calculator.html', data)

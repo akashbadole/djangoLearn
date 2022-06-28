@@ -20,7 +20,7 @@ from . import view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', view.index, name='home'),
-    path('homepage/', view.homepage),
+    # path('homepage/', view.homepage),
     # path('blog/<int:courseid>', view.blog), #int
     # path('blog/<str:courseid>', view.blog), #string
     # path('blog/<slug:courseid>', view.blog), #slug
@@ -38,5 +38,6 @@ urlpatterns = [
     path('404', view.fourzerofour, name='fourzerofour'), #fourzerofour
     path('userform', view.userform, name='userform'), #userform
     path('thank-you/', view.thankyou, name='thankyou'), #thank-you
+    path('calculator/', view.calculator, name='calculator'), #calculator
 
 ]
