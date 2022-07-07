@@ -31,8 +31,16 @@ def index(request):
 
     return render(request, 'index.html', data)
 
-# about us integrating
- 
+
+def newsdetails(request, slug):
+    # print(newsid)
+    newsdetails = News.objects.get(slug=slug)
+    data={
+        'newsdetails' : newsdetails
+    }
+    return render(request, 'newsdetails.html', data)
+
+#  about us integrating
 def aboutus(request):
     return render(request, 'about.html')
 
@@ -46,7 +54,15 @@ def contact(request):
     return render(request, 'contact.html')
 
 def feature(request):
-    return render(request, 'feature.html')
+    ServiceData = Service.objects.all()
+    if request.method == "GET":
+        st = request.GET.get('servicename')
+        if st!=None:
+            ServiceData = Service.objects.filter(service_title=st)
+    data={
+        'ServiceData':ServiceData
+    }
+    return render(request, 'feature.html', data)
     
 def project(request):
     return render(request, 'project.html')
@@ -56,6 +72,7 @@ def quote(request):
     
 
 def service(request):
+    
     return render(request, 'service.html')
     
 def team(request):
