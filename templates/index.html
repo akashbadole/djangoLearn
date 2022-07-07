@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<marquee class="marqueecl">
+{% for news in newsData  %}
+   <a href="#"> {{news.news_title}}</a> &nbsp;
+{% endfor %}
+</marquee>
+
+
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel position-relative">
@@ -55,17 +62,19 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
+                {% for n in serviceData %}
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                     <div class="d-flex align-items-center mb-4">
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
-                            <i class="fa fa-users text-white"></i>
+                            <i class="{{n.service_icon}}"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">3453</h1>
+                        <h1 class="mb-0" data-toggle="counter-up">{{n.service_number}}</h1>
                     </div>
-                    <h5 class="mb-3">Happy Customers</h5>
-                    <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
+                    <h5 class="mb-3">{{n.service_title}}</h5>
+                    <span>{{n.service_desc  | safe }}</span>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                {% endfor %}
+                {% comment %} <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <div class="d-flex align-items-center mb-4">
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <i class="fa fa-check text-white"></i>
@@ -94,7 +103,7 @@
                     </div>
                     <h5 class="mb-3">Expert Workers</h5>
                     <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </div>

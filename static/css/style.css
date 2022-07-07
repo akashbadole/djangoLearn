@@ -574,3 +574,15 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
+.marqueecl{
+    width: 100% ;
+    background-color: #32C36C;
+    margin-bottom: -2px;
+    color: #FFFFFF;
+}
+
+.marqueecl a{
+    color: #ffffff !important;
+    text-decoration: none;
+}

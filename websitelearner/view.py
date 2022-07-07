@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms  import usersform
-
+from service.models import Service
+from news.models import News
 
 def index(request):
     # data={
@@ -16,10 +17,22 @@ def index(request):
     #     ]
     # }
     # return render(request, 'index.html', data)
-    return render(request, 'index.html')
+
+    serviceData = Service.objects.all().order_by('service_number') # - for descending order # [:3] for limiting
+    newsData    = News.objects.all()
+    # for a in serviceData:
+    #     print(a.service_icon)
+    # print(Service) 
+
+    data={
+        'serviceData':serviceData,
+        'newsData'   :newsData,
+    }
+
+    return render(request, 'index.html', data)
 
 # about us integrating
-
+ 
 def aboutus(request):
     return render(request, 'about.html')
 
